@@ -1,0 +1,23 @@
+{
+  "name": "valtio-storybook",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "bundle": "tsup ./src/index.tsx --env.NODE_ENV production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/react": "^19.1.4",
+    "tsup": "^8.4.0"
+  },
+  "peerDependencies": {
+    "es-toolkit": "^1.37.2",
+    "typescript": "^5.8.3",
+    "valtio": "^2.1.5",
+    "@storybook/react": "^8.6.12"
+  }
+}
