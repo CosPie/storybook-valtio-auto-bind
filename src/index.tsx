@@ -139,3 +139,5 @@ export const ValtioStorybookTwoWayBindingDecorators = [
 	ValtioStoreBindStory,
 	StoryBindValtioStoreDecorator,
 ];
+
+export { linkArgToStore, Args };
