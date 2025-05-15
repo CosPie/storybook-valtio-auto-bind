@@ -39,7 +39,9 @@ export default function App() {
 								d="M13 10V3L4 14h7v7l9-11h-7z"
 							/>
 						</svg>
-						<span className="text-xl font-bold">Valtio Storybook Auto Bind</span>
+						<span className="text-xl font-bold">
+							Valtio Storybook Auto Bind
+						</span>
 					</div>
 
 					{/* Desktop Nav */}
@@ -157,11 +159,13 @@ export default function App() {
 						</a>
 					</div>
 					<div className="mt-16">
-						<img
-							src="https://picsum.photos/800/400"
-							alt="Code Preview"
-							className="rounded-xl shadow-2xl shadow-black/50 border border-gray-800 mx-auto"
-						/>
+						<iframe
+							src="https://stackblitz.com/edit/vitejs-vite-ksbqc3p1?ctl=1&embed=1&file=.storybook%2Fpreview.ts,src%2Fstories%2FValtioStoreBind.stories.tsx,src%2Fstories%2FfooStore.ts&theme=dark"
+							title="StackBlitz Preview"
+							className="w-full h-[500px] rounded-xl shadow-2xl shadow-black/50 border border-gray-800 mx-auto"
+							allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+							sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+						></iframe>
 					</div>
 				</div>
 			</section>
