@@ -1,6 +1,6 @@
-name: Publish Package to npmjs
+name: Publish on Release
+
 on:
-  on:
   push:
     tags:
       - 'v*' # 推送类似 v1.0.0 的 tag 时触发
