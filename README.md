@@ -1,4 +1,4 @@
-# Storybook Valtio Two-Way Binding
+# Storybook Valtio Auto Bind
 
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?logo=typescript&logoColor=white)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/cospie/storybook-valtio-auto-bind/node.js.yml)
