@@ -39,7 +39,7 @@ export default function App() {
 								d="M13 10V3L4 14h7v7l9-11h-7z"
 							/>
 						</svg>
-						<span className="text-xl font-bold">Valtio Storybook Binding</span>
+						<span className="text-xl font-bold">Valtio Storybook Auto Bind</span>
 					</div>
 
 					{/* Desktop Nav */}
@@ -261,14 +261,14 @@ export default function App() {
 						<div className="mb-4 flex items-center">
 							<span className="text-emerald-400 mr-2">$</span>
 							<span className="text-gray-400">
-								npm install storybook-valtio-binding valtio
+								npm install storybook-valtio-auto-bind valtio
 							</span>
 						</div>
 						<div className="border-t border-gray-700 my-4"></div>
 						<pre className="text-sm overflow-x-auto">
 							<code className="text-gray-300">
 								{`// .storybook/preview.tsx
-import { ValtioStorybookTwoWayBindingDecorators } from 'storybook-valtio-binding';
+import { ValtioStorybookTwoWayBindingDecorators } from 'storybook-valtio-auto-bind';
 export const decorators = [...ValtioStorybookTwoWayBindingDecorators];`}
 							</code>
 						</pre>
@@ -286,7 +286,7 @@ export const decorators = [...ValtioStorybookTwoWayBindingDecorators];`}
 						<pre className="text-sm overflow-x-auto">
 							<code className="text-gray-300">
 								{`import { proxy } from 'valtio';
-import { withStores } from 'storybook-valtio-binding';
+import { withStores } from 'storybook-valtio-auto-bind';
 
 const counterStore = proxy({ count: 0 });
 
@@ -330,11 +330,11 @@ export const Counter = withStores(
 								/>
 							</svg>
 							<span className="text-lg font-semibold">
-								Valtio Storybook Binding
+								Valtio Storybook Auto Bind
 							</span>
 						</div>
 						<div className="text-sm text-gray-500">
-							© {new Date().getFullYear()} Valtio Storybook Binding. MIT
+							© {new Date().getFullYear()} Valtio Storybook Auto Bind. MIT
 							Licensed.
 						</div>
 					</div>

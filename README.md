@@ -1,7 +1,7 @@
 # Storybook Valtio Two-Way Binding
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![npm version](https://img.shields.io/npm/v/storybook-valtio-binding.svg)](https://www.npmjs.com/package/storybook-valtio-binding)
+[![npm version](https://img.shields.io/npm/v/storybook-valtio-auto-bind.svg)](https://www.npmjs.com/package/storybook-valtio-auto-bind)
 [![pages-build-deployment](https://github.com/CosPie/storybook-valtio-auto-bind/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/CosPie/storybook-valtio-auto-bind/actions/workflows/pages/pages-build-deployment)
 [![codecov](https://codecov.io/gh/CosPie/storybook-valtio-auto-bind/graph/badge.svg?token=3X6NKW23PY)](https://codecov.io/gh/CosPie/storybook-valtio-auto-bind)
 Easily enable two-way binding between Storybook Controls and [Valtio](https://github.com/pmndrs/valtio) state management. This library provides decorators to synchronize Storybook args with Valtio stores, making it seamless to manage and preview state changes in your components.
@@ -21,9 +21,9 @@ Easily enable two-way binding between Storybook Controls and [Valtio](https://gi
 Install the package via npm or yarn:
 
 ```bash
-npm install storybook-valtio-binding valtio
+npm install storybook-valtio-auto-bind valtio
 # or
-yarn add storybook-valtio-binding valtio
+yarn add storybook-valtio-auto-bind valtio
 ```
 
 ---
@@ -36,7 +36,7 @@ Import and add the provided decorators to your Storybook configuration:
 
 ```tsx
 // .storybook/preview.tsx
-import { ValtioStorybookTwoWayBindingDecorators } from 'storybook-valtio-binding';
+import { ValtioStorybookTwoWayBindingDecorators } from 'storybook-valtio-auto-bind';
 
 export const decorators = [...ValtioStorybookTwoWayBindingDecorators];
 ```
@@ -47,7 +47,7 @@ Use the `withStores` helper to bind Valtio stores to your stories:
 
 ```tsx
 import { proxy } from 'valtio';
-import { withStores } from 'storybook-valtio-binding';
+import { withStores } from 'storybook-valtio-auto-bind';
 
 const counterStore = proxy({ count: 0 });
 
@@ -86,7 +86,7 @@ export const Counter = withStores(
 
 ```tsx
 import { proxy } from 'valtio';
-import { withStores } from 'storybook-valtio-binding';
+import { withStores } from 'storybook-valtio-auto-bind';
 
 const store = proxy({ text: 'Hello, Storybook!' });
 
