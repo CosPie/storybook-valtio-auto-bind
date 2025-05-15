@@ -2,9 +2,8 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![npm version](https://img.shields.io/npm/v/storybook-valtio-binding.svg)](https://www.npmjs.com/package/storybook-valtio-binding)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/your-repo/storybook-valtio-binding/ci.yml?branch=main)](https://github.com/your-repo/storybook-valtio-binding/actions)
-[![Coverage Status](https://img.shields.io/codecov/c/github/your-repo/storybook-valtio-binding/main.svg)](https://codecov.io/gh/your-repo/storybook-valtio-binding)
-
+[![pages-build-deployment](https://github.com/CosPie/storybook-valtio-auto-bind/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/CosPie/storybook-valtio-auto-bind/actions/workflows/pages/pages-build-deployment)
+[![codecov](https://codecov.io/gh/CosPie/storybook-valtio-auto-bind/graph/badge.svg?token=3X6NKW23PY)](https://codecov.io/gh/CosPie/storybook-valtio-auto-bind)
 Easily enable two-way binding between Storybook Controls and [Valtio](https://github.com/pmndrs/valtio) state management. This library provides decorators to synchronize Storybook args with Valtio stores, making it seamless to manage and preview state changes in your components.
 
 ---
