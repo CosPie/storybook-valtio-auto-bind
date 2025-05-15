@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "tsup ./src/index.tsx --env.NODE_ENV production",
-    "coverage": "npx vitest run --coverage"
+    "coverage": "npx vitest run --coverage",
+    "test": "vitest"
   },
   "keywords": [],
   "author": "",
