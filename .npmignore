@@ -1,0 +1,27 @@
+# test
+test/
+
+# dev
+.eslintrc.js
+.prettierrc.js
+tsconfig.json
+jest.config.js
+vitest.config.js
+
+# cache
+node_modules/
+build/
+coverage/
+docs/
+
+# Git
+.git
+.gitignore
+.github/**
+
+# ide
+.idea/
+.vscode/
+
+tsup.config.ts
+vitest.config.ts

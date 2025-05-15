@@ -1,13 +1,12 @@
 # Storybook Valtio Two-Way Binding
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?logo=typescript&logoColor=white)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/cospie/storybook-valtio-auto-bind/node.js.yml)
 [![Node.js CI](https://github.com/CosPie/storybook-valtio-auto-bind/actions/workflows/node.js.yml/badge.svg)](https://github.com/CosPie/storybook-valtio-auto-bind/actions/workflows/node.js.yml)
 [![pages](https://github.com/CosPie/storybook-valtio-auto-bind/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/CosPie/storybook-valtio-auto-bind/actions/workflows/pages/pages-build-deployment)
 [![codecov](https://codecov.io/gh/CosPie/storybook-valtio-auto-bind/graph/badge.svg?token=3X6NKW23PY)](https://codecov.io/gh/CosPie/storybook-valtio-auto-bind)
 [![npm version](https://img.shields.io/npm/v/storybook-valtio-auto-bind.svg)](https://www.npmjs.com/package/storybook-valtio-auto-bind)
-
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 Easily enable two-way binding between [Storybook Controls](https://storybook.js.org/docs/essentials/controls) and [Valtio](https://github.com/pmndrs/valtio) state management. This library provides decorators to synchronize Storybook args with Valtio stores, making it seamless to manage and preview state changes in your components.
 

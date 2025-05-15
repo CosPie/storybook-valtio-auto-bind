@@ -1,7 +1,9 @@
 {
   "name": "storybook-valtio-auto-bind",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist/"],
   "type": "module",
   "scripts": {
     "build": "tsup ./src/index.tsx --env.NODE_ENV production",
@@ -12,8 +14,9 @@
   "author": "cospie",
   "repository": {
     "type": "git",
-    "url": "https://github.com/CosPie/storybook-valtio-auto-bind"
+    "url": "git+https://github.com/CosPie/storybook-valtio-auto-bind.git"
   },
+  
   "license": "ISC",
   "description": "",
   "devDependencies": {
