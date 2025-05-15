@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 export default function App() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -265,16 +267,23 @@ export default function App() {
 						<div className="mb-4 flex items-center">
 							<span className="text-emerald-400 mr-2">$</span>
 							<span className="text-gray-400">
-								npm install storybook-valtio-auto-bind valtio
+								npm install storybook-valtio-auto-bind valtio -D
 							</span>
 						</div>
 						<div className="border-t border-gray-700 my-4"></div>
 						<pre className="text-sm overflow-x-auto">
-							<code className="text-gray-300">
-								{`// .storybook/preview.tsx
+							<SyntaxHighlighter
+								language="javascript"
+								style={atomOneDark}
+								customStyle={{ fontSize: "0.875rem", borderRadius: "0.75rem" }}
+							>
+								{`// .storybook/preview.ts
 import { ValtioStorybookTwoWayBindingDecorators } from 'storybook-valtio-auto-bind';
-export const decorators = [...ValtioStorybookTwoWayBindingDecorators];`}
-							</code>
+
+export const decorators = [
+    ...ValtioStorybookTwoWayBindingDecorators
+];`}
+							</SyntaxHighlighter>
 						</pre>
 					</div>
 				</div>
@@ -284,11 +293,15 @@ export const decorators = [...ValtioStorybookTwoWayBindingDecorators];`}
 			<section id="examples" className="py-20 px-4 bg-gray-900/50">
 				<div className="container mx-auto max-w-4xl">
 					<h2 className="text-3xl font-bold text-center mb-12">
-						Usage Example
+						Story Usage Example
 					</h2>
 					<div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700 shadow-xl">
 						<pre className="text-sm overflow-x-auto">
-							<code className="text-gray-300">
+							<SyntaxHighlighter
+								language="javascript"
+								style={atomOneDark}
+								customStyle={{ fontSize: "0.875rem", borderRadius: "0.75rem" }}
+							>
 								{`import { proxy } from 'valtio';
 import { withStores } from 'storybook-valtio-auto-bind';
 
@@ -296,20 +309,15 @@ const counterStore = proxy({ count: 0 });
 
 export default {
   title: 'Example/Counter',
+  component: Counter,
 };
 
-export const Counter = withStores(
-  { counter: counterStore },
-  (args) => (
-    <button 
-      onClick={() => counterStore.count++}
-      className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 rounded"
-    >
-      Count: {args.counter.count}
-    </button>
-  )
+type Story = StoryObj<typeof Counter>;
+
+export const Counter: Story = withStores(
+  { counterStore }
 );`}
-							</code>
+							</SyntaxHighlighter>
 						</pre>
 					</div>
 				</div>

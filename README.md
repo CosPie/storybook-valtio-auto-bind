@@ -25,9 +25,9 @@ Easily enable two-way binding between [Storybook Controls](https://storybook.js.
 Install the package via npm or yarn:
 
 ```bash
-npm install storybook-valtio-auto-bind valtio
+npm install storybook-valtio-auto-bind valtio -D
 # or
-yarn add storybook-valtio-auto-bind valtio
+yarn add storybook-valtio-auto-bind valtio -D
 ```
 
 ---
