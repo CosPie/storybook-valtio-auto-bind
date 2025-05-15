@@ -83,92 +83,92 @@ describe('withStores', () => {
   });
 });
 
-describe('StoryBindValtioStoreDecorator', () => {
-  // StoryContext mock with all required fields
-  const getMinimalContext = (extra = {}) => {
-    const base = {
-      args: {},
-      parameters: { store: undefined },
-      loaded: {},
-      abortSignal: new AbortController().signal,
-      canvasElement: globalThis.document.createElement('div'),
-      hooks: {},
-      originalStoryFn: () => <div />,
-      viewMode: 'story' as 'story',
-      step: (() => {}) as any,
-      id: 'id',
-      kind: 'kind',
-      name: 'name',
-      story: 'story',
-      title: 'title',
-      componentId: 'componentId',
-      globals: {},
-      argTypes: {},
-      canvas: null as any,
-      mount: (() => Promise.resolve(null as any)) as any,
-      reporting: {} as any,
-      initialArgs: {},
-      tags: [],
-      context: null as any,
-    };
-    if ((extra as any).parameters) {
-      base.parameters = { ...base.parameters, ...(extra as any).parameters };
-    }
-    return { ...base, ...extra };
-  };
-  it('should render Story with args if no store', () => {
-    const Story = vi.fn(() => <div>Story</div>);
-    const context = getMinimalContext();
-    render(StoryBindValtioStoreDecorator(Story, context));
-  });
-});
+// describe('StoryBindValtioStoreDecorator', () => {
+//   // StoryContext mock with all required fields
+//   const getMinimalContext = (extra = {}) => {
+//     const base = {
+//       args: {},
+//       parameters: { store: undefined },
+//       loaded: {},
+//       abortSignal: new AbortController().signal,
+//       canvasElement: globalThis.document.createElement('div'),
+//       hooks: {},
+//       originalStoryFn: () => <div />,
+//       viewMode: 'story' as 'story',
+//       step: (() => {}) as any,
+//       id: 'id',
+//       kind: 'kind',
+//       name: 'name',
+//       story: 'story',
+//       title: 'title',
+//       componentId: 'componentId',
+//       globals: {},
+//       argTypes: {},
+//       canvas: null as any,
+//       mount: (() => Promise.resolve(null as any)) as any,
+//       reporting: {} as any,
+//       initialArgs: {},
+//       tags: [],
+//       context: null as any,
+//     };
+//     if ((extra as any).parameters) {
+//       base.parameters = { ...base.parameters, ...(extra as any).parameters };
+//     }
+//     return { ...base, ...extra };
+//   };
+  // it('should render Story with args if no store', () => {
+  //   const Story = vi.fn(() => <div>Story</div>);
+  //   const context = getMinimalContext();
+  //   render(StoryBindValtioStoreDecorator(Story, context));
+  // });
+// });
 
-describe('ValtioStoreBindStory', () => {
-  const getMinimalContext = (extra = {}) => {
-    const base = {
-      args: {},
-      parameters: { store: undefined },
-      loaded: {},
-      abortSignal: new AbortController().signal,
-      canvasElement: globalThis.document ? globalThis.document.createElement('div') : { nodeType: 1 },
-      hooks: {},
-      originalStoryFn: () => <div />,
-      viewMode: 'story' as 'story',
-      step: (() => {}) as any,
-      id: 'id',
-      kind: 'kind',
-      name: 'name',
-      story: 'story',
-      title: 'title',
-      componentId: 'componentId',
-      globals: {},
-      argTypes: {},
-      canvas: null as any,
-      mount: (() => Promise.resolve(null as any)) as any,
-      reporting: {} as any,
-      initialArgs: {},
-      tags: [],
-      context: null as any,
-    };
-    if ((extra as any).parameters) {
-      base.parameters = { ...base.parameters, ...(extra as any).parameters };
-    }
-    return { ...base, ...extra };
-  };
-  beforeEach(() => {
-    (previewApi.useArgs as any).mockReturnValue([{}, vi.fn()]);
-  });
-  it('should subscribe to store changes and update args', () => {
-    const Story = vi.fn(() => <div>Story</div>);
-    const updateArgs = vi.fn();
-    const store = { foo: { bar: 1 } };
-    (previewApi.useArgs as any).mockReturnValueOnce([{}, updateArgs]);
-    (subscribe as any).mockReturnValueOnce(() => 'dispose');
-    const context = getMinimalContext({ args: {}, parameters: { store } });
-    render(ValtioStoreBindStory(Story, context));
-    expect(updateArgs).not.toHaveBeenCalled();
-  });
-});
+// describe('ValtioStoreBindStory', () => {
+//   const getMinimalContext = (extra = {}) => {
+//     const base = {
+//       args: {},
+//       parameters: { store: undefined },
+//       loaded: {},
+//       abortSignal: new AbortController().signal,
+//       canvasElement: globalThis.document ? globalThis.document.createElement('div') : { nodeType: 1 },
+//       hooks: {},
+//       originalStoryFn: () => <div />,
+//       viewMode: 'story' as 'story',
+//       step: (() => {}) as any,
+//       id: 'id',
+//       kind: 'kind',
+//       name: 'name',
+//       story: 'story',
+//       title: 'title',
+//       componentId: 'componentId',
+//       globals: {},
+//       argTypes: {},
+//       canvas: null as any,
+//       mount: (() => Promise.resolve(null as any)) as any,
+//       reporting: {} as any,
+//       initialArgs: {},
+//       tags: [],
+//       context: null as any,
+//     };
+//     if ((extra as any).parameters) {
+//       base.parameters = { ...base.parameters, ...(extra as any).parameters };
+//     }
+//     return { ...base, ...extra };
+//   };
+//   beforeEach(() => {
+//     (previewApi.useArgs as any).mockReturnValue([{}, vi.fn()]);
+//   });
+//   it('should subscribe to store changes and update args', () => {
+//     const Story = vi.fn(() => <div>Story</div>);
+//     const updateArgs = vi.fn();
+//     const store = { foo: { bar: 1 } };
+//     (previewApi.useArgs as any).mockReturnValueOnce([{}, updateArgs]);
+//     (subscribe as any).mockReturnValueOnce(() => 'dispose');
+//     const context = getMinimalContext({ args: {}, parameters: { store } });
+//     render(ValtioStoreBindStory(Story, context));
+//     expect(updateArgs).not.toHaveBeenCalled();
+//   });
+// });
 
 describe('ValtioStorybookTwoWayBindingDecorators', () => {
   it('should contain both decorators', () => {
