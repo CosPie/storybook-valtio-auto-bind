@@ -1,7 +1,10 @@
 name: Publish Package to npmjs
 on:
-  release:
-    types: [published]
+  on:
+  push:
+    tags:
+      - 'v*' # 推送类似 v1.0.0 的 tag 时触发
+
 jobs:
   build:
     runs-on: ubuntu-latest
