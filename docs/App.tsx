@@ -281,6 +281,7 @@ export default function App() {
 import { ValtioStorybookTwoWayBindingDecorators } from 'storybook-valtio-auto-bind';
 
 export const decorators = [
+    // connect to storybook
     ...ValtioStorybookTwoWayBindingDecorators
 ];`}
 							</SyntaxHighlighter>
@@ -302,20 +303,22 @@ export const decorators = [
 								style={atomOneDark}
 								customStyle={{ fontSize: "0.875rem", borderRadius: "0.75rem" }}
 							>
-								{`import { proxy } from 'valtio';
+								{`// counter.stories.tsx
+import { proxy } from 'valtio';
 import { withStores } from 'storybook-valtio-auto-bind';
 
 const counterStore = proxy({ count: 0 });
 
+// storybook meta
 export default {
   title: 'Example/Counter',
   component: Counter,
 };
 
-type Story = StoryObj<typeof Counter>;
-
-export const Counter: Story = withStores(
-  { counterStore }
+// use withStores inject valtio store
+export const Counter: StoryObj<typeof Counter> = withStores(
+  { counterStore },
+  { /* ...StoryObj */ },
 );`}
 							</SyntaxHighlighter>
 						</pre>
